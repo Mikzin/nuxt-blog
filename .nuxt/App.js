@@ -4,6 +4,8 @@ import NuxtLoading from './components/nuxt-loading.vue'
 
 let layouts = {
 
+  "_admin": () => import('../layouts/admin.vue'  /* webpackChunkName: "layouts/admin" */).then(m => m.default || m),
+
   "_default": () => import('../layouts/default.vue'  /* webpackChunkName: "layouts/default" */).then(m => m.default || m)
 
 }

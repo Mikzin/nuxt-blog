@@ -5,7 +5,11 @@ Vue.use(Router)
 
 const _576d9af6 = () => import('../pages/index.vue' /* webpackChunkName: "pages/index" */).then(m => m.default || m)
 const _8778c418 = () => import('../pages/about/index.vue' /* webpackChunkName: "pages/about/index" */).then(m => m.default || m)
+const _6d6d9994 = () => import('../pages/admin/index.vue' /* webpackChunkName: "pages/admin/index" */).then(m => m.default || m)
 const _d450528c = () => import('../pages/posts/index.vue' /* webpackChunkName: "pages/posts/index" */).then(m => m.default || m)
+const _77466177 = () => import('../pages/admin/auth/index.vue' /* webpackChunkName: "pages/admin/auth/index" */).then(m => m.default || m)
+const _15824788 = () => import('../pages/admin/new-post/index.vue' /* webpackChunkName: "pages/admin/new-post/index" */).then(m => m.default || m)
+const _4e397261 = () => import('../pages/admin/_postId/index.vue' /* webpackChunkName: "pages/admin/_postId/index" */).then(m => m.default || m)
 const _1b1304a5 = () => import('../pages/posts/_id/index.vue' /* webpackChunkName: "pages/posts/_id/index" */).then(m => m.default || m)
 
 
@@ -53,9 +57,29 @@ export function createRouter () {
 			name: "about"
 		},
 		{
+			path: "/admin",
+			component: _6d6d9994,
+			name: "admin"
+		},
+		{
 			path: "/posts",
 			component: _d450528c,
 			name: "posts"
+		},
+		{
+			path: "/admin/auth",
+			component: _77466177,
+			name: "admin-auth"
+		},
+		{
+			path: "/admin/new-post",
+			component: _15824788,
+			name: "admin-new-post"
+		},
+		{
+			path: "/admin/:postId",
+			component: _4e397261,
+			name: "admin-postId"
 		},
 		{
 			path: "/posts/:id",

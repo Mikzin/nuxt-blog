@@ -1,23 +1,13 @@
 <template>
         <section class="post-list">
-        <PostPreview
-        id="1"
+        <PostPreview 
+        v-for="post in posts" 
+        :key="post.id"
+        :id="post.id"
         :is-admin="isAdmin"
-        thumbnail="https://www.fidelity.com/bin-public/060_www_fidelity_com/images/tech-stocks-twitter.png"
-        title="Hello there"
-        previewText="This is the first post here" />
-        <PostPreview
-        id="2"
-        :is-admin="isAdmin"
-        thumbnail="https://www.fidelity.com/bin-public/060_www_fidelity_com/images/tech-stocks-twitter.png"
-        title="Hello there"
-        previewText="This is the second post here" />
-        <PostPreview
-        id="3"
-        :is-admin="isAdmin"
-        thumbnail="https://www.fidelity.com/bin-public/060_www_fidelity_com/images/tech-stocks-twitter.png"
-        title="Hello there"
-        previewText="This is the third post here" />
+        :thumbnail="post.thumbnail"
+        :title="post.title"
+        :previewText="post.previewText" />
   </section>
 </template>
 
@@ -32,6 +22,10 @@ export default {
     isAdmin: {
       type: Boolean,
       default: false
+    },
+    posts: {
+      type: Array,
+      required: true
     }
   }
 }

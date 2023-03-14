@@ -1,13 +1,13 @@
 <template>
-        <section class="post-list">
-        <PostPreview 
-        v-for="post in posts" 
-        :key="post.id"
-        :id="post.id"
-        :is-admin="isAdmin"
-        :thumbnail="post.thumbnail"
-        :title="post.title"
-        :previewText="post.previewText" />
+  <section class="post-list">
+    <PostPreview
+      v-for="post in posts"
+      :key="post.id"
+      :id="post.id"
+      :is-admin="isAdmin"
+      :thumbnail="post.thumbnail"
+      :title="post.title"
+      :previewText="post.previewText" />
   </section>
 </template>
 
@@ -31,8 +31,10 @@ export default {
 }
 </script>
 
+
 <style scoped>
-   .post-list {
+
+.post-list {
   display: flex;
   padding: 20px;
   box-sizing: border-box;
@@ -41,3 +43,4 @@ export default {
   justify-content: center;
 }
 </style>
+

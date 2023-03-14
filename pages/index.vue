@@ -1,14 +1,14 @@
 <template>
- <div class="homepage">
-  <section class="intro">
-    <h1>Get the latest news!</h1>
-  </section>
+  <div class="home-page">
+    <section class="intro">
+      <h1>Get the latest tech news!</h1>
+    </section>
     <PostList :posts="loadedPosts" />
- </div>
+  </div>
 </template>
 
 <script>
-import PostList from '@/components/Posts/PostList'
+import PostList from "@/components/Posts/PostList";
 
 export default {
   components: {
@@ -19,8 +19,14 @@ export default {
       return this.$store.getters.loadedPosts
     }
   }
-}
+  // data() {
+  //   return {
+  //     loadedPosts: []
+  //   };
+  // },
+};
 </script>
+
 
 <style scoped>
 .intro {
@@ -28,7 +34,7 @@ export default {
   position: relative;
   padding: 30px;
   box-sizing: border-box;
-  background-image: url('~assets/images/main-page-background.jpg');
+  background-image: url("~assets/images/main-page-background.jpg");
   background-position: center;
   background-size: cover;
 }

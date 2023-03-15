@@ -12,6 +12,9 @@ import { setContext, getLocation, getRouteData } from './utils'
 import { createStore } from './store.js'
 
 /* Plugins */
+import nuxt_plugin_axios_559731e8 from 'nuxt_plugin_axios_559731e8' // Source: ./axios.js
+import nuxt_plugin_corecomponents_4963358a from 'nuxt_plugin_corecomponents_4963358a' // Source: ../plugins/core-components.js
+import nuxt_plugin_datefilter_f4b26092 from 'nuxt_plugin_datefilter_f4b26092' // Source: ../plugins/date-filter.js
 
 
 // Component: <no-ssr>
@@ -34,7 +37,7 @@ Vue.use(Meta, {
   tagIDKeyName: 'hid' // the property name that vue-meta uses to determine whether to overwrite or append a tag
 })
 
-const defaultTransition = {"name":"page","mode":"out-in","appear":false,"appearClass":"appear","appearActiveClass":"appear-active","appearToClass":"appear-to"}
+const defaultTransition = {"name":"fade","mode":"out-in","appear":false,"appearClass":"appear","appearActiveClass":"appear-active","appearToClass":"appear-to"}
 
 async function createApp (ssrContext) {
   const router = createRouter()
@@ -150,6 +153,9 @@ async function createApp (ssrContext) {
 
   // Plugin execution
   
+  if (typeof nuxt_plugin_axios_559731e8 === 'function') await nuxt_plugin_axios_559731e8(app.context, inject)
+  if (typeof nuxt_plugin_corecomponents_4963358a === 'function') await nuxt_plugin_corecomponents_4963358a(app.context, inject)
+  if (typeof nuxt_plugin_datefilter_f4b26092 === 'function') await nuxt_plugin_datefilter_f4b26092(app.context, inject)
   
 
   // If server-side, wait for async component to be resolved first

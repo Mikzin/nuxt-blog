@@ -7,30 +7,35 @@
 </template>
 
 <script>
-import AdminPostForm from '@/components/Admin/AdminPostForm'
-import axios from 'axios'
+import AdminPostForm from "@/components/Admin/AdminPostForm";
 
 export default {
-  layout: 'admin',
+  layout: "admin",
   components: {
     AdminPostForm
   },
   asyncData(context) {
-    return axios.get('https://nuxt-blog-e1acb-default-rtdb.europe-west1.firebasedatabase.app/posts/' + context.params.postId + '.json').then(res=>{
-      return {
-        loadedPost: {...res.data, id: context.params.postId}
-      }
-    }).catch(e=>context.error(e))
+    return context.app.$axios
+      .$get(
+        process.env.baseUrl + "/posts/" +
+          context.params.postId +
+          ".json"
+      )
+      .then(data => {
+        return {
+          loadedPost: { ...data, id: context.params.postId }
+        };
+      })
+      .catch(e => context.error());
   },
   methods: {
     onSubmitted(editedPost) {
-      this.$store.dispatch('editPost', editedPost).then(()=>{
-        this.$router.push('/admin')
-      })
+      this.$store.dispatch("editPost", editedPost).then(() => {
+        this.$router.push("/admin");
+      });
     }
   }
-
-}
+};
 </script>
 
 <style scoped>

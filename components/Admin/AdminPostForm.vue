@@ -19,14 +19,7 @@
 </template>
 
 <script>
-import AppControlInput from "@/components/UI/AppControlInput";
-import AppButton from "@/components/UI/AppButton";
-
 export default {
-  components: {
-    AppControlInput,
-    AppButton
-  },
   props: {
     post: {
       type: Object,
@@ -48,9 +41,11 @@ export default {
   },
   methods: {
     onSave() {
+      // Save the post
       this.$emit('submit', this.editedPost)
     },
     onCancel() {
+      // Navigate back
       this.$router.push("/admin");
     }
   }

@@ -1,8 +1,8 @@
 {
-  "name": "nuxt-blog",
+  "name": "nuxt-course",
   "version": "1.0.0",
-  "description": "Nuxt.js blog practice",
-  "author": "Mikhail",
+  "description": "Nuxt.js course for Udemy",
+  "author": "Maximilian Schwarzmüller",
   "private": true,
   "scripts": {
     "dev": "nuxt",
@@ -11,6 +11,7 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
+    "@nuxtjs/axios": "^4.5.2",
     "axios": "^0.17.1",
     "nuxt": "^1.0.0"
   },

@@ -69,9 +69,13 @@ module.exports = {
     baseUrl:
       process.env.BASE_URL ||
       'https://nuxt-blog-e1acb-default-rtdb.europe-west1.firebasedatabase.app',
+    fbAPIkey: 'AIzaSyASeXxcL7qz6UkGj_wDH8nqcz1EaiWa7Ls'
   },
   transition: {
     name: 'fade',
     mode: 'out-in',
   },
+  // router: {
+  //   middleware: 'log'
+  // }
 };

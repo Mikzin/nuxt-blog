@@ -118,7 +118,7 @@ export async function setContext(app, context) {
       payload: context.payload,
       error: context.error,
       base: '/',
-      env: {"baseUrl":"https://nuxt-blog-e1acb-default-rtdb.europe-west1.firebasedatabase.app"}
+      env: {"baseUrl":"https://nuxt-blog-e1acb-default-rtdb.europe-west1.firebasedatabase.app","fbAPIkey":"AIzaSyASeXxcL7qz6UkGj_wDH8nqcz1EaiWa7Ls"}
     }
     // Only set once
     if (context.req) app.context.req = context.req

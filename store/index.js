@@ -45,14 +45,14 @@ const createStore = () => {
           updatedDate: new Date()
         }
         return this.$axios
-        .$post("https://nuxt-blog.firebaseio.com/posts.json?auth=" + vuexContext.state.token, createdPost)
+        .$post("https://nuxt-blog-e1acb-default-rtdb.europe-west1.firebasedatabase.app/posts.json?auth=" + vuexContext.state.token, createdPost)
         .then(data => {
           vuexContext.commit('addPost', {...createdPost, id: data.name})
         })
         .catch(e => console.log(e));
       },
       editPost(vuexContext, editedPost) {
-        return this.$axios.$put("https://nuxt-blog.firebaseio.com/posts/" +
+        return this.$axios.$put("https://nuxt-blog-e1acb-default-rtdb.europe-west1.firebasedatabase.app/posts/" +
           editedPost.id +
           ".json?auth=" + vuexContext.state.token, editedPost)
           .then(res => {
